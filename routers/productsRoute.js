@@ -21,7 +21,6 @@ router.get("/:id", async (request, response, next) => {
   try {
     const { id } = request.params;
     const productById = await Products.findByPk(id, {
-      raw: true,
       include: Categories,
     });
     response.send(productById);
